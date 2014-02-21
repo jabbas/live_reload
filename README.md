@@ -3,6 +3,12 @@ live_reload
 
 Automagic webpage reloader/refresher
 
+DEPENDENCIES
+------------
+1. [perl](http://www.perl.org/) - tested with 5.16.2
+2. [Mojolicious](http://mojolicio.us/)
+3. [AnyEvent](https://metacpan.org/pod/AnyEvent) (pulled by the previous one by default)
+
 HOWTO
 -----
 
@@ -25,6 +31,7 @@ You can use it in your favorite editor to reload the web page after saving the f
 TODO
 ----
 - moar docs!!!
+- vim plugin
 - configurable listening ports
 - websocket connections pool
 - queueing if not connected
