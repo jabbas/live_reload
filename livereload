@@ -1,0 +1,16 @@
+#!/usr/bin/env perl
+
+use Mojo::Server::Daemon;
+
+my $daemon = Mojo::Server::Daemon->new(silent => 1);
+
+$daemon->load_app('livereload.app');
+
+foreach (@{$daemon->listen}) {
+    my $url = Mojo::URL->new($_);
+    $url->host('localhost') if $url->host eq '*';
+    $url->path('livereload');
+    say STDERR sprintf 'Add following to webpage: <script src="%s"></script>', $url->to_abs;
+}
+$daemon->run;
+
