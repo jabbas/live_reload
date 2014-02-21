@@ -24,7 +24,7 @@ HOWTO
 ```
 3. Send ```reload``` to port ```8888``` on machine you launched the app (eg.: ```echo reload | nc localhost 8888```)
 
-4. Go to http://localhost:3000/ for demo page
+4. Go to [http://localhost:3000/](http://localhost:3000/) for demo page
 
 WHY YOU NEED IT?
 ----------------
