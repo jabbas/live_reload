@@ -39,3 +39,4 @@ TODO
 - refreshing css without full page reload
 - chrome/chromium plugin
 - listen on unix socket
+- cpanify and publish on CPAN
