@@ -6,8 +6,10 @@ Automagic webpage reloader/refresher
 DEPENDENCIES
 ------------
 1. [perl](http://www.perl.org/) - tested with 5.16.2
-2. [Mojolicious](http://mojolicio.us/)
+2. [Mojolicious](http://mojolicio.us/) - modern perl framework for the web
 3. [AnyEvent](https://metacpan.org/pod/AnyEvent) (pulled by the previous one by default)
+
+Your web browser need to support WebSockets!
 
 HOWTO
 -----
@@ -22,6 +24,7 @@ HOWTO
 ```
 3. Send ```reload``` to port ```8888``` on machine you launched the app (eg.: ```echo reload | nc localhost 8888```)
 
+4. Go to [http://localhost:3000/](http://localhost:3000/) for demo page
 
 WHY YOU NEED IT?
 ----------------
