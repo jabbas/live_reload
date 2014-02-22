@@ -1,10 +1,13 @@
 #!/usr/bin/env perl
 
 use Mojo::Server::Daemon;
+use English qw/-no_match_vars/;
+use Path::Class;
 
+my $app_dir = file(readlink $PROGRAM_NAME || $PROGRAM_NAME)->absolute->dir;
 my $daemon = Mojo::Server::Daemon->new(silent => 1);
 
-$daemon->load_app('livereload.app');
+$daemon->load_app(file $app_dir, 'livereload.app');
 
 foreach (@{$daemon->listen}) {
     my $url = Mojo::URL->new($_);
@@ -12,5 +15,5 @@ foreach (@{$daemon->listen}) {
     $url->path('livereload');
     say STDERR sprintf 'Add following to webpage: <script src="%s"></script>', $url->to_abs;
 }
-$daemon->run;
 
+$daemon->run;
